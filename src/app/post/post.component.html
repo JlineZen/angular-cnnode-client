@@ -1,0 +1,15 @@
+<div class="post-list">
+  <ul>
+    <li class="post-item" *ngFor="let post of posts">
+      <a href="javascript:void(0);" class="user_avator pull-left"> <img [src]="post.author.avatar_url" alt="avator" /> </a>
+      <span class="reply pull-left">
+        <span class="count-of-reply" title="回复数">{{ post.reply_count }}</span
+        ><span class="count-sperator">/</span><span class="count-of-visited" title="点击数">{{ post.visit_count }}</span>
+      </span>
+      <div class="post-wrapper">
+        <span class="put-top" *ngIf="post.top">置顶</span> <a [routerLink]="[post.id]" [title]="post.title" class="top-title">{{ post.title }}</a>
+      </div>
+    </li>
+  </ul>
+  <mat-paginator *ngIf="posts.length !== 0" [pageSizeOptions]="pageSizeOptions" (page)="pageChange($event)" [length]="length"> </mat-paginator>
+</div>

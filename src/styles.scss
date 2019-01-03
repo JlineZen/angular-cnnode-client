@@ -1,1 +1,118 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.clearfix {
+  &:after {
+    content: '';
+    clear: both;
+    line-height: 0;
+    display: table;
+  }
+}
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+.markdown-text p,
+.preview p {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  line-height: 2em;
+  margin: 1em 0;
+}
+
+.markdown-text > :last-child,
+.preview > :last-child,
+textarea#title {
+  margin-bottom: 1em;
+}
+
+.markdown-text > :first-child,
+.preview > :first-child {
+  margin-top: 0;
+}
+
+.markdown-text li,
+.preview li {
+  font-size: 14px;
+  line-height: 2em;
+}
+
+.markdown-text li code,
+.markdown-text p code,
+.preview li code,
+.preview p code {
+  color: #000;
+  background-color: #fcfafa;
+  padding: 4px 6px;
+}
+
+.markdown-text img {
+  cursor: pointer;
+}
+
+.markdown-text h1 code,
+.markdown-text h2 code,
+.markdown-text h3 code,
+.markdown-text h4 code,
+.markdown-text h5 code,
+.markdown-text h6 code {
+  font-size: inherit;
+  color: inherit;
+}
+
+.markdown-text img {
+  width: auto\9;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
