@@ -1,4 +1,5 @@
 <app-navbar class="mat-elevation-z6"></app-navbar>
 <div class="app-content">
+  <mat-progress-bar *ngIf="loading" [mode]="progressBarMode" [color]="progressBarColor" [value]="progressBarValue" [bufferValue]="progressBarBufferValue"> </mat-progress-bar>
   <div class="container"><router-outlet></router-outlet></div>
 </div>
