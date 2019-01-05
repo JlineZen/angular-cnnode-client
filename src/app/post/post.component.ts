@@ -16,7 +16,7 @@ export class PostComponent implements OnInit {
 
   private tag: string
 
-  pageSize: number = 25
+  pageSize: number = 50
 
   length: number = 1000
 

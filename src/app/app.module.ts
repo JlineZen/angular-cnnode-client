@@ -10,6 +10,8 @@ import { AppFooterComponent } from './app-footer/app-footer.component'
 import { MatButtonModule, MatProgressBarModule } from '@angular/material'
 import { LoadingService } from './loading.service'
 import { AppInterCeptor } from './app.interceptors'
+import { RouteReuseStrategy } from '@angular/router'
+import { CacheRouteStrategy } from './cacheRoute.strategy'
 
 @NgModule({
   declarations: [CNodeAppComponent, AppNavComponent, AppFooterComponent],
@@ -20,6 +22,10 @@ import { AppInterCeptor } from './app.interceptors'
       useFactory: (loadingService: LoadingService) => new AppInterCeptor(loadingService),
       multi: true,
       deps: [LoadingService]
+    },
+    {
+      provide: RouteReuseStrategy,
+      useClass: CacheRouteStrategy
     }
   ],
   bootstrap: [CNodeAppComponent]

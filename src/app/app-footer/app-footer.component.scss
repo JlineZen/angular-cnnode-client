@@ -1,4 +1,18 @@
 footer {
-  padding: 20px 10%;
+  padding: 30px 5%;
+  font-size: 12px;
   background-color: #fff;
+  .col-fade {
+    color: #ababab;
+    p {
+      line-height: 20px;
+      vertical-align: bottom;
+      margin-bottom: 20px;
+    }
+    a {
+      vertical-align: bottom;
+      color: #08c;
+      text-decoration: none;
+    }
+  }
 }
