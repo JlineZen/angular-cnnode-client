@@ -7,7 +7,11 @@
         ><span class="count-sperator">/</span><span class="count-of-visited" title="点击数">{{ post.visit_count }}</span>
       </span>
       <div class="post-wrapper">
-        <span class="put-top" *ngIf="post.top">置顶</span> <a [routerLink]="[post.id]" [title]="post.title" class="top-title">{{ post.title }}</a>
+        <span class="put-top" *ngIf="post.top; else normal">置顶</span>
+        <ng-template #normal>
+          <span class="put-top normal" #normal>{{ post.tab | tab }}</span>
+        </ng-template>
+        <a [routerLink]="[post.id]" [title]="post.title" class="top-title">{{ post.title }}</a>
       </div>
     </li>
   </ul>

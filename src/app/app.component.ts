@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 import { LoadingService } from './loading.service'
+import { debounceTime } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'cnode-app',
@@ -7,16 +9,12 @@ import { LoadingService } from './loading.service'
   styleUrls: ['./app.component.scss']
 })
 export class CNodeAppComponent {
-  loading: boolean
+  loading$: Observable<boolean>
   progressBarColor: string = 'warn'
   progressBarMode: string = 'indeterminate'
   progressBarValue: number = 50
   progressBarBufferValue: number = 75
   constructor(private loadingService: LoadingService) {
-    this.loadingService.onLoadingChanged.subscribe((loading: boolean) => {
-      setTimeout(() => {
-        this.loading = loading
-      })
-    })
+    this.loading$ = this.loadingService.onLoadingChanged.pipe(debounceTime(100))
   }
 }

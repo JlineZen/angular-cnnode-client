@@ -21,14 +21,28 @@ p,
 ul,
 li,
 dl,
+ol,
 dt,
 dd {
   margin: 0;
   padding: 0;
 }
 
+p {
+  margin: 0 0 10px 0;
+}
+
 li {
   list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+  &:bofore,
+  &:after {
+    content: '';
+    box-sizing: border-box;
+  }
 }
 
 .clearfix {

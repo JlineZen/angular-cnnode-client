@@ -1,0 +1,6 @@
+<app-panel *ngIf="(emptyPosts$ | async)?.length">
+  <p class="empty-post-title">无人回复的话题</p>
+  <ul>
+    <li class="empty-post-item" *ngFor="let post of (emptyPosts$ | async)">{{ post.title }}</li>
+  </ul>
+</app-panel>

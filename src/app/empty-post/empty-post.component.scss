@@ -1,0 +1,17 @@
+.empty-post-title {
+  color: #51585c;
+  line-height: 40px;
+  background-color: #f6f6f6;
+  margin-left: -10px;
+  margin-right: -10px;
+  text-indent: 10px;
+  margin-top: -10px;
+  border-radius: 3px 3px 0 0;
+}
+.empty-post-item {
+  padding: 5px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

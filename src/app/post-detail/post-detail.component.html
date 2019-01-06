@@ -1,5 +1,7 @@
-<div class="post-container">
-  <p class="tl back"><a mat-stroked-button routerLink="../">返回</a></p>
-  <h3>{{ post.title }}</h3>
-  <div class="post-content" [innerHtml]="post.content"></div>
-</div>
+<ng-container *ngIf="(post$ | async) as post">
+  <div class="post-container">
+    <p class="tl back"><a mat-stroked-button routerLink="../">返回</a></p>
+    <h3>{{ post.title }}</h3>
+    <div class="post-content" [innerHtml]="post.content"></div>
+  </div>
+</ng-container>

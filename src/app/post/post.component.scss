@@ -40,10 +40,15 @@
       color: #fff;
       font-size: 12px;
       margin-right: 5px;
+      &.normal {
+        color: #999;
+        background-color: #e5e5e5;
+      }
     }
     .post-wrapper {
       white-space: nowrap;
       max-width: 80%;
+      overflow: hidden;
       .top-title {
         text-decoration: none;
         text-overflow: ellipsis;

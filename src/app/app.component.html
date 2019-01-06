@@ -1,6 +1,13 @@
+<mat-progress-bar
+  *ngIf="(loading$ | async)"
+  [mode]="progressBarMode"
+  [color]="progressBarColor"
+  [value]="progressBarValue"
+  [bufferValue]="progressBarBufferValue"
+></mat-progress-bar>
 <app-navbar class="mat-elevation-z6"></app-navbar>
 <div class="app-content">
-  <mat-progress-bar *ngIf="loading" [mode]="progressBarMode" [color]="progressBarColor" [value]="progressBarValue" [bufferValue]="progressBarBufferValue"> </mat-progress-bar>
   <div class="container"><router-outlet></router-outlet></div>
 </div>
+<app-back-to-top></app-back-to-top>
 <app-footer></app-footer>

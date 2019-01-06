@@ -1,0 +1,26 @@
+.login-card {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 25px;
+  a {
+    color: #778087;
+    text-decoration: none;
+  }
+  .span-info {
+    display: inline-block;
+    float: none;
+    padding: 3px 10px;
+    border: none;
+    margin: 0;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    letter-spacing: 2px;
+    box-shadow: none;
+    border-radius: 3px;
+    line-height: 2em;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #5bc0de;
+  }
+}

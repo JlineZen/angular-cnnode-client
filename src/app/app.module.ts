@@ -12,9 +12,11 @@ import { LoadingService } from './loading.service'
 import { AppInterCeptor } from './app.interceptors'
 import { RouteReuseStrategy } from '@angular/router'
 import { CacheRouteStrategy } from './cacheRoute.strategy'
+import { BackToTopComponent } from './back-to-top/back-to-top.component'
+import { BackTopDirective } from './back-to-top/back-to-top.directive'
 
 @NgModule({
-  declarations: [CNodeAppComponent, AppNavComponent, AppFooterComponent],
+  declarations: [CNodeAppComponent, AppNavComponent, AppFooterComponent, BackToTopComponent, BackTopDirective],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, MatButtonModule, MatProgressBarModule],
   providers: [
     {

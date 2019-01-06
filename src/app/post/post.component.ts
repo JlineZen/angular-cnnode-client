@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, OnDestroy } from '@angular/core'
 import { HomeService } from '../home/home.service'
 import { ActivatedRoute, Params } from '@angular/router'
 import { Post } from '../home/post.model'
 import { switchMap } from 'rxjs/operators'
 import { PageEvent } from '@angular/material'
-import { Observable } from 'rxjs'
+import { Observable, Subscription } from 'rxjs'
+import { DataService } from '../data.service'
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnDestroy {
   posts: Post[] = []
 
   private tag: string
 
-  pageSize: number = 50
+  pageSize: number = 25
 
   length: number = 1000
 
@@ -24,10 +25,12 @@ export class PostComponent implements OnInit {
 
   pageSizeOptions: number[] = [25, 50, 100]
 
-  constructor(private homeService: HomeService, private activeRoute: ActivatedRoute) {}
+  private sub: Subscription
+
+  constructor(private homeService: HomeService, private activeRoute: ActivatedRoute, private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.activeRoute.paramMap
+    this.sub = this.activeRoute.paramMap
       .pipe(
         // 频繁切换tab的时候会取消之前的request
         switchMap((params: Params) => {
@@ -38,13 +41,14 @@ export class PostComponent implements OnInit {
       .subscribe(result => {
         if (result.success) {
           this.posts = result.data
+          this.dataService.shareData(this.posts.filter(post => post.reply_count === 0))
         }
       })
   }
 
   pageChange($event: PageEvent): void {
     const observer: Observable<PageEvent> = Observable.create(observer => observer.next($event))
-    observer
+    this.sub = observer
       .pipe(
         switchMap(($event: PageEvent) => {
           this.pageSize = $event.pageSize
@@ -54,7 +58,12 @@ export class PostComponent implements OnInit {
       .subscribe(result => {
         if (result.success) {
           this.posts = result.data
+          this.dataService.shareData(this.posts.filter(post => post.reply_count === 0))
         }
       })
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe()
   }
 }
