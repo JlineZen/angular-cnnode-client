@@ -1,0 +1,9 @@
+<div class="post-comment">
+  <div class="comment-content">
+    <a href="" class="avator"> <img [src]="comment.author.avatar_url" alt="" /> </a>
+    <p class="user-info">
+      <a href="">loginname</a> <span>{{ comment.create_at | ago }}</span>
+    </p>
+    <div class="comment-info" [innerHtml]="comment.content"></div>
+  </div>
+</div>

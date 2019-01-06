@@ -1,0 +1,41 @@
+.post-comment {
+  border-top: 1px solid #f0f0f0;
+  padding: 10px;
+  .comment-content {
+    padding-left: 40px;
+    padding-right: 10px;
+    position: relative;
+    .avator {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      img {
+        width: 30px;
+        height: 30px;
+        display: block;
+      }
+    }
+    .user-info {
+      color: #666;
+      font-size: 11px;
+      a {
+        color: #666;
+        font-weight: bold;
+      }
+      span {
+        color: #08c;
+        margin-left: 10px;
+      }
+    }
+    .comment-info {
+      padding-left: 2px;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 1em;
+      line-height: 24px;
+    }
+  }
+}

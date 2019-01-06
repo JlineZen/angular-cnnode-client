@@ -11,10 +11,24 @@ import { PanelComponent } from '../panel/panel.component'
 import { EmptyPostComponent } from '../empty-post/empty-post.component'
 import { FriendlyLinkComponent } from '../friendly-link/friendly-link.component'
 import { TabPipe } from '../post/post.tab.pipe'
-import { CommentsComponent } from '../comments/comments.component'
+import { PostCommentsComponent } from '../post-comments/post-comments.component'
+import { TimePipe } from '../post/time.pipe'
+import { PostCommentComponent } from '../post-comment/post-comment.component'
 
 @NgModule({
-  declarations: [HomeComponent, PostComponent, PostDetailComponent, LoginCardComponent, PanelComponent, EmptyPostComponent, FriendlyLinkComponent, TabPipe, CommentsComponent],
+  declarations: [
+    HomeComponent,
+    PostComponent,
+    PostDetailComponent,
+    LoginCardComponent,
+    PanelComponent,
+    EmptyPostComponent,
+    FriendlyLinkComponent,
+    TabPipe,
+    PostCommentsComponent,
+    TimePipe,
+    PostCommentComponent
+  ],
   imports: [MatTabsModule, HomeRouting, CommonModule, MatPaginatorModule, MatButtonModule],
   providers: [HomeService]
 })

@@ -1,6 +1,7 @@
 .post-list {
   width: 100%;
   min-height: 400px;
+  background-color: #fff;
   .post-item {
     position: relative;
     padding: 10px;
@@ -10,6 +11,8 @@
       background-color: #f5f5f5;
     }
     .user_avator {
+      width: 30px;
+      height: 30px;
       img {
         width: 30px;
         height: 30px;
@@ -60,6 +63,10 @@
           text-decoration: underline;
         }
       }
+    }
+    .ago {
+      font-size: 11px;
+      color: #777;
     }
   }
 }

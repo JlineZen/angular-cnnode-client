@@ -1,6 +1,6 @@
 <div class="main-container clearfix">
   <div class="left-content pull-left">
-    <nav mat-tab-nav-bar>
+    <nav class="bg-white" mat-tab-nav-bar>
       <a mat-tab-link *ngFor="let link of links" [routerLink]="link.path" (click)="go(link)" [active]="activeLink.path == link.path"> {{ link.label }} </a>
     </nav>
     <router-outlet></router-outlet>
